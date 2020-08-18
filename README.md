@@ -105,5 +105,5 @@ $ ansible [pattern] -m [module] -a "[module options]"
 ```
 
 ◻ Ad hoc commands are commands which can be run individually to perform quick functions. These commands need not be performed later.
-◻ For example, you have to reboot all your company servers. For this, you will run the Adhoc commands from ‘/usr/bin/ansible’.
+◻ For example, you have to reboot all your company servers. For this, you will run the Adhoc commands from ‘/usr/bin/ansible’. 
 ◻ These ad-hoc commands are not used for configuration management and deployment, because these commands are of one time usage.
