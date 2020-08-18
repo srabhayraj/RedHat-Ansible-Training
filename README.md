@@ -96,3 +96,14 @@ With a fresh installation of Ansible, like every other software, it ships with a
 By default Ansible reads its configuration file in /etc/ansible/ansible.cfg , however this behavior can be altered. The recommended practice is either to have an ansible.cfg in your current project working directory or to set it as an environment variable. One way to determine which configuration file ansible is using is to use the $ansible –version command, you can also run your ansible commands with the -v option.
 
 The second location on the food chain is to have ansible.cfg in your current working directory. if Ansible doesn’t find a configuration file in the current working directory, it will then look in for an .ansible.cfg file in the user’s home directory, if there isn’t one there either, it will finally grab the /etc/ansible/ansible.cfg.
+
+## Ad hoc Command
+
+Ad-hoc commands are great for tasks you repeat rarely. For example, if you want to power off all the machines in your lab for Christmas vacation, you could execute a quick one-liner in Ansible without writing a playbook. An ad-hoc command looks like this:
+```
+$ ansible [pattern] -m [module] -a "[module options]"
+```
+
+◻ Ad hoc commands are commands which can be run individually to perform quick functions. These commands need not be performed later.
+◻ For example, you have to reboot all your company servers. For this, you will run the Adhoc commands from ‘/usr/bin/ansible’.
+◻ These ad-hoc commands are not used for configuration management and deployment, because these commands are of one time usage.
