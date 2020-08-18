@@ -110,7 +110,11 @@ $ ansible [pattern] -m [module] -a "[module options]"
 
 # [Implementing Playbooks]
 
-## YAML Files
+## YAML File Syntax
+
+◻ For Ansible, nearly every YAML file starts with a list. Each item in the list is a list of key/value pairs, commonly called a “hash” or a “dictionary”. So, we need to know how to write lists and dictionaries in YAML.
+◻ There’s another small quirk to YAML. All YAML files (regardless of their association with Ansible or not) can optionally begin with --- and end with .... This is part of the YAML format and indicates the start and end of a document.
+◻ All members of a list are lines beginning at the same indentation level starting with a "- " (a dash and a space):
 ```
 ---
 # Employee records
@@ -128,4 +132,5 @@ $ ansible [pattern] -m [module] -a "[module options]"
       - lisp
       - fortran
       - erlang
+...
 ```
