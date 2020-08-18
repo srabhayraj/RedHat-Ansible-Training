@@ -1,5 +1,7 @@
 # RedHat-Ansible-Training
 
+## [Introduction to Ansible]
+
 ◻ Ansible is simple open source IT engine which automates application deployment, intra service orchestration, cloud provisioning and many other IT tools.
 
 ◻ Ansible is easy to deploy because it does not use any agents or custom security infrastructure.
