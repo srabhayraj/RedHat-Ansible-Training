@@ -20,3 +20,39 @@ Ansible works by connecting to your nodes and pushing out small programs, called
 The management node in the above picture is the controlling node (managing node) which controls the entire execution of the playbook. It’s the node from which you are running the installation. The inventory file provides the list of hosts where the Ansible modules needs to be run and the management node does a SSH connection and executes the small modules on the hosts machine and installs the product/software.
 
 Beauty of Ansible is that it removes the modules once those are installed so effectively it connects to host machine , executes the instructions and if it’s successfully installed removes the code which was copied on the host machine which was executed.
+
+
+## [Installing Ansible]
+
+Installing Ansible on RHEL, CentOS, or Fedora
+On Fedora:
+```
+$ sudo dnf install ansible
+```
+On RHEL and CentOS:
+```
+$ sudo yum install ansible
+```
+RPMs for RHEL 7 and RHEL 8 are available from the Ansible Engine repository.
+
+To enable the Ansible Engine repository for RHEL 8, run the following command:
+```
+$ sudo subscription-manager repos --enable ansible-2.9-for-rhel-8-x86_64-rpms
+```
+To enable the Ansible Engine repository for RHEL 7, run the following command:
+```
+$ sudo subscription-manager repos --enable rhel-7-server-ansible-2.9-rpms
+```
+RPMs for currently supported versions of RHEL, CentOS, and Fedora are available from EPEL as well as releases.ansible.com.
+
+Ansible version 2.4 and later can manage earlier operating systems that contain Python 2.6 or higher.
+
+You can also build an RPM yourself. From the root of a checkout or tarball, use the make rpm command to build an RPM you can distribute and install.
+
+```
+$ git clone https://github.com/ansible/ansible.git
+$ cd ./ansible
+$ make rpm
+$ sudo rpm -Uvh ./rpm-build/ansible-*.noarch.rpm
+```
+
