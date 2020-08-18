@@ -26,7 +26,7 @@ Beauty of Ansible is that it removes the modules once those are installed so eff
 
 Ansible works by connecting to your nodes and pushing out small programs, called "Ansible modules" to them. These programs are written to be resource models of the desired state of the system. Ansible then executes these modules (over SSH by default), and removes them when finished.
 
-![Ansible architecture](https://github.com/srabhayraj/RedHat-Ansible-Training/blob/master/metadata/images/ansible_architecture.jpg)
+![Ansible architecture](https://github.com/srabhayraj/RedHat-Ansible-Training/blob/master/metadata/images/ansible-architecture.png)
 
 
 
