@@ -29,6 +29,14 @@ Ansible works by connecting to your nodes and pushing out small programs, called
 ![Ansible architecture](https://github.com/srabhayraj/RedHat-Ansible-Training/blob/master/metadata/images/ansible-architecture.png)
 
 
+## [Ansible Deployment]
+
+Ansible is the simplest way to deploy your applications. It gives you the power to deploy multi-tier applications reliably and consistently, all from one common framework. You can configure needed services as well as push application artifacts from one common system.
+
+![Ansible deployment](https://github.com/srabhayraj/RedHat-Ansible-Training/blob/master/metadata/images/ansible-deployment.jpg)
+
+
+
 
 ## [Installing Ansible]
 
