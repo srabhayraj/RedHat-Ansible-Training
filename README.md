@@ -137,7 +137,7 @@ $ ansible [pattern] -m [module] -a "[module options]"
 ...
 ```
 
-## Ansible Playbooks
+# [Ansible Playbooks]
 
 Playbooks are the basis for a really simple configuration management and multi-machine deployment system, unlike any that already exist, and one that is very well suited to deploying complex applications.
 
@@ -184,7 +184,7 @@ While you might run the main /usr/bin/ansible program for ad-hoc tasks, playbook
   - nagios
 ```
 
-## Implementing Roles
+# [Implementing Roles]
 
 Roles provide a framework for fully independent, or interdependent collections of variables, tasks, files, templates, and modules. In Ansible, the role is the primary mechanism for breaking a playbook into multiple files. This simplifies writing complex playbooks, and it makes them easier to reuse.
 
@@ -214,3 +214,23 @@ tests/
 vars/
     main.yml
 ```
+
+# [Ansible Vault]
+
+Ansible Vault is a feature of ansible that allows you to keep sensitive data such as passwords or keys in encrypted files, rather than as plaintext in playbooks or roles. These vault files can then be distributed or placed in source control.
+To enable this feature, a command line tool - ansible-vault - is used to edit files, and a command line flag (--ask-vault-pass, --vault-password-file or --vault-id) is used. Alternately, you may specify the location of a password file or command Ansible to always prompt for the password in your ansible.cfg file. These options require no command line flag usage.
+
+To run a playbook that contains vault-encrypted data files, you must provide the vault password.
+
+To specify the vault-password interactively:
+```
+ansible-playbook site.yml --ask-vault-pass
+```
+This prompt will then be used to decrypt (in memory only) any vault encrypted files that are accessed.
+
+Alternatively, passwords can be specified with a file or a script (the script version will require Ansible 1.7 or later). When using this flag, ensure permissions on the file are such that no one else can access your key and do not add your key to source control:
+```
+ansible-playbook site.yml --vault-password-file ~/.vault_pass.txt
+ansible-playbook site.yml --vault-password-file ~/.vault_pass.py
+```
+The password should be a string stored as a single line in the file.
