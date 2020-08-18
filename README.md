@@ -183,3 +183,34 @@ While you might run the main /usr/bin/ansible program for ad-hoc tasks, playbook
   - base-apache
   - nagios
 ```
+
+## Implementing Roles
+
+Roles provide a framework for fully independent, or interdependent collections of variables, tasks, files, templates, and modules. In Ansible, the role is the primary mechanism for breaking a playbook into multiple files. This simplifies writing complex playbooks, and it makes them easier to reuse.
+
+Ansible Galaxy is a repository for Ansible Roles that are available to drop directly into your Playbooks to streamline your automation projects
+
+Using the ansible-galaxy command line tool that comes bundled with Ansible, you can create a role with the init command. For example, the following will create a role directory structure called test-role-1 in the current working directory:
+```
+$ ansible-galaxy init test-role-1
+```
+The test-role-1 directory will contain the following:
+```
+.travis.yml
+README.md
+defaults/
+    main.yml
+files/
+handlers/
+    main.yml
+meta/
+    main.yml
+tasks/
+    main.yml
+templates/
+tests/
+    inventory
+    test.yml
+vars/
+    main.yml
+```
