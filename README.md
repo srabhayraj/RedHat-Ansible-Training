@@ -136,3 +136,50 @@ $ ansible [pattern] -m [module] -a "[module options]"
       - erlang
 ...
 ```
+
+## Ansible Playbooks
+
+Playbooks are the basis for a really simple configuration management and multi-machine deployment system, unlike any that already exist, and one that is very well suited to deploying complex applications.
+
+Playbooks can declare configurations, but they can also orchestrate steps of any manual ordered process, even as different steps must bounce back and forth between sets of machines in particular orders. They can launch tasks synchronously or asynchronously.
+
+While you might run the main /usr/bin/ansible program for ad-hoc tasks, playbooks are more likely to be kept in source control and used to push out your configuration or assure the configurations of your remote systems are in spec.
+```
+---
+# This playbook deploys the whole application stack in this site.
+
+# Apply common configuration to all hosts
+- hosts: all
+
+  roles:
+  - common
+
+# Configure and deploy database servers.
+- hosts: dbservers
+
+  roles:
+  - db
+
+# Configure and deploy the web servers. Note that we include two roles
+# here, the 'base-apache' role which simply sets up Apache, and 'web'
+# which includes our example web application.
+
+- hosts: webservers
+
+  roles:
+  - base-apache
+  - web
+
+# Configure and deploy the load balancer(s).
+- hosts: lbservers
+
+  roles:
+  - haproxy
+
+# Configure and deploy the Nagios monitoring node(s).
+- hosts: monitoring
+
+  roles:
+  - base-apache
+  - nagios
+```
